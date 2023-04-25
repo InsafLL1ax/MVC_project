@@ -1,0 +1,30 @@
+﻿
+@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+</head>
+<body>
+    <div>
+        <h3>Второй курс</h3>
+        <input type="hidden" value="@ViewBag.LessonId" name="lesson_id" />
+        <table>
+            @foreach (var b in ViewBag.marks)
+            {
+                <tr>
+                    <td><p>@b.name</p></td>
+                    <td><p>@b.mark</p></td>
+                </tr>
+            }
+        </table>
+        <form method="post" action="">
+            <input type="submit" value="Всем 2!" />
+        </form>
+    </div>
+</body>
+</html>

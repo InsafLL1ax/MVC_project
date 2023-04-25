@@ -1,0 +1,31 @@
+﻿@inherits System.Web.Mvc.WebViewPage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link type="text/css" rel="stylesheet" href="../../Content/Site.css" />
+</head>
+<body>
+    <div>
+        <h3>Список предметов</h3>
+        <table>
+            <tr>
+                <td><p>Дисциплина</p></td>
+                <td><p>Информация</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.lessons)
+            {
+                <tr>
+                    <td><p>@b.lesson_name</p></td>
+                    <td><p>@b.description</p></td>
+                    <td><p><a href="/Lesson/Change?id=@b.id">Оценки</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
